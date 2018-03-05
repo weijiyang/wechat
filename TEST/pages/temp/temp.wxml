@@ -1,0 +1,65 @@
+<!--pages/temp/temp.wxml-->
+
+
+<template name="even" >
+  <view class="even">THIS IS  EVEN</view>
+</template>
+
+
+<template name="odd" >
+ <view class="odd">THIS IS  ODD</view>
+</template>
+
+<block wx:for="{{numArray}}">
+  <template  is="{{item%2 == 0 ? 'even':'odd'}}"> </template>
+</block>
+
+<template name="msgTemplate">
+  <view>
+    <text>{{index}}: {{msg}}</text>
+    <text>Time : {{time}}</text>
+  </view>
+</template>
+<template is="msgTemplate" data="{{...templateMsg}}"></template>
+
+
+
+
+
+<view wx:for="{{array}}" class="tempbg">
+  {{index}}: {{item.text}}
+</view>
+
+<view wx:for="{{array}}"  wx:for-index="idx" wx:for-item="itemName">
+{{idx}} : {{itemName.text}}
+</view>
+
+
+
+
+
+
+<view wx:for-items="{{[zero,1,2,3]}}">{{item}}</view>
+
+<view id="item-{{id}}">这是item-id</view>
+<view wx:if="{{condition}}">我是true</view>
+<view wx:if="{{!condition}}">我是false</view>
+<button bindtap="changeCondition">点我更换condition</button>
+
+
+
+
+
+<view> 这里是练习页面这里是练习页面这里是练习页面这里是练习页面这里是练</view>
+<view bindtap="viewTap"> 点我</view>
+<view>{{text}}</view>
+<button bindtap="changeText">更改文本内容</button>
+<view>{{num}}</view>
+<button bindtap="changeNum">点我更改数字</button>
+<view>{{array[0].text}}</view>
+<button bindtap="changeItemArray">更改数组</button>
+<view>{{object.text}}</view>
+<button bindtap="changeItemObject">更改对象内容</button>
+<view>{{newField.text}}</view>
+<button bindtap="addNewField">点我添加新内容</button>
+
