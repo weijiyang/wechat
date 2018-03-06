@@ -6,3 +6,5 @@
 *引用方式 <wxs src=""  module="moduleName" />
 * eg: <view class="viewred" hover-class="hoverred" hover-start-time="20" hover-stay-time="2000" bindtap="clickred">CLICK HERE</view>
 hover-class:鼠标移至样式  hover-start-time 鼠标移至开始改变样式时间 hober-stay-time 鼠标移至切换样式保留延迟消失时间
+
+* <scroll-view scroll-y style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> </scroll-view>   bindscrolltoupper ：滚动到顶部触发upper  bindscrolltolower：滚动到底部触发lower scroll-into-view ： 定位到视图id scroll-top 竖直滚动条位置
