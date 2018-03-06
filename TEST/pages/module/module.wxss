@@ -1,0 +1,36 @@
+/* pages/module/module.wxss */
+.viewred{
+  width:50px;
+  height:50px;
+  background:red;
+  color:white;
+  text-align:center;
+  margin : 0 auto;
+}
+.hoverred{
+  opacity:0.5;
+}
+.section{
+  overflow:hidden;
+}
+.scroll-view-item{
+  height:100px;
+  width:100%;
+}
+.scroll-view-item_H{
+  height:100px;
+  width:100%;
+  float:left;
+}
+.bc_green{
+  background:green;
+}
+.bc_red{
+  background:red;
+}
+.bc_yellow{
+  background:yellow;
+}
+.bc_blue{
+  background:blue;
+}

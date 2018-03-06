@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/module/module",
     "pages/temp/temp",
     "pages/index/index",
     "pages/logs/logs"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,8 +24,8 @@
         "text": "日志"
       },
       {
-        "pagePath":"pages/temp/temp",
-        "text":"练习"
+        "pagePath": "pages/temp/temp",
+        "text": "练习"
       }
     ],
     "selectedColor": "red"

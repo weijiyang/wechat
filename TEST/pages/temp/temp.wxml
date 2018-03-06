@@ -1,6 +1,27 @@
 <!--pages/temp/temp.wxml-->
 
 
+//wxs模块 使用module.exports暴露私有变量和方法 wxs和wxml文件使用wxs单标签引入
+<wxs src="./temp.wxs" module="tools" />
+<view>{{tools.foos}}</view>
+<view>{{tools.message}}</view>
+<view>{{tools.bars("kanzheli")}}</view>
+
+//冒泡bindtap  而catchtap不冒泡
+<view bindtap="handleTap1">
+outer view
+  <view catchtap="handleTap2">
+    middle view  
+    <view bindtap="handleTap3">
+      inner view
+    </view>
+  </view>
+</view>
+
+
+
+
+//模板切换  template无形存在
 <template name="even" >
   <view class="even">THIS IS  EVEN</view>
 </template>
@@ -14,6 +35,7 @@
   <template  is="{{item%2 == 0 ? 'even':'odd'}}"> </template>
 </block>
 
+//模板中 data ="...data" 向模板传递参数
 <template name="msgTemplate">
   <view>
     <text>{{index}}: {{msg}}</text>
@@ -25,11 +47,11 @@
 
 
 
-
+//wx:for循环  默认关键词index item对象
 <view wx:for="{{array}}" class="tempbg">
   {{index}}: {{item.text}}
 </view>
-
+//wx:for 循环 wx：for-index 更改index名称 wx:for-item 更改item对象名称
 <view wx:for="{{array}}"  wx:for-index="idx" wx:for-item="itemName">
 {{idx}} : {{itemName.text}}
 </view>
@@ -38,7 +60,7 @@
 
 
 
-
+//wx:for数组循环 可嵌套变量
 <view wx:for-items="{{[zero,1,2,3]}}">{{item}}</view>
 
 <view id="item-{{id}}">这是item-id</view>
@@ -49,7 +71,7 @@
 
 
 
-
+//绑定事件使用bindtap   并在js中Page方法中定义 绑定方法
 <view> 这里是练习页面这里是练习页面这里是练习页面这里是练习页面这里是练</view>
 <view bindtap="viewTap"> 点我</view>
 <view>{{text}}</view>

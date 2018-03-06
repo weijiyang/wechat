@@ -24,6 +24,15 @@ Page({
       text : 'init object data '
     }
   },
+  handleTap1 : function(){
+    console.log("this is handleTap1")
+  },
+  handleTap2: function () {
+    console.log("this is handleTap2")
+  },
+  handleTap3: function () {
+    console.log("this is handleTap3")
+  },
   changeCondition : function(){
     this.setData({
       "condition" : !this.data.condition

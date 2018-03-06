@@ -1,0 +1,9 @@
+var foo = " hello  world "
+var bar = function(d){
+  return d;
+}
+module.exports = {
+  foos : foo ,
+  bars : bar
+}
+module.exports.message = "this is the wxs message"
