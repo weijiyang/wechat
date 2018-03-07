@@ -7,6 +7,13 @@
 * eg: <view class="viewred" hover-class="hoverred" hover-start-time="20" hover-stay-time="2000" bindtap="clickred">CLICK HERE</view>
 hover-class:鼠标移至样式  hover-start-time 鼠标移至开始改变样式时间 hober-stay-time 鼠标移至切换样式保留延迟消失时间
 
+### scroll 组件
 * <scroll-view scroll-y style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> </scroll-view>   bindscrolltoupper ：滚动到顶部触发upper  bindscrolltolower：滚动到底部触发lower scroll-into-view ： 定位到视图id scroll-top 竖直滚动条位置
 * 上面的例子如果是横向滚动  scroll-x  wxss需要注意   ： 
 .scrollView{white-space: nowrap; }.scroll-view-item_H{width:100%; height:100px; display:inline-block; }
+
+### swiper 组件
+* eg : <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+* indicator-dots:是否有滚动点 autoplay: 是否自动滚动 interval:滚动间隔 duration:滚动动画时间
+
+
