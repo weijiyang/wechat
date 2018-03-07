@@ -1,3 +1,5 @@
+
+
 <text>hover 样式练习</text>
 <view class="viewred" hover-class="hoverred" hover-start-time="20" hover-stay-time="2000" bindtap="clickred">CLICK HERE</view>
 
@@ -18,10 +20,12 @@
 
 <view class="section section_gap">
   <view class="section__title">horizontal scroll</view>
-  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+  <scroll-view class="scrollView" bindscroll="scroll" scroll-x="true">
     <view id="green" class="scroll-view-item_H bc_green"></view>
     <view id="red"  class="scroll-view-item_H bc_red"></view>
     <view id="yellow" class="scroll-view-item_H bc_yellow"></view>
     <view id="blue" class="scroll-view-item_H bc_blue"></view>
   </scroll-view>
 </view>
+
+<view class="footer">THIS IS FOOTER</view>

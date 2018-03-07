@@ -1,0 +1,22 @@
+<!--pages/swiper/swiper.wxml-->
+
+<view class="colorbox" style="background:{{color}}">颜色混合器</view>
+<slider bindchange="changecolorred" show-value min="0" max="255" />红
+<slider bindchange="changecoloryellow" show-value min="0" max="255" />黄
+<slider bindchange="changecolorblue" show-value min="0" max="255" />蓝
+
+
+
+<text>swiper 练习</text>
+<swiper indicator-dots="{{indicatorDots}}" indicator-color="blue" indicator-active-color="red" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<button bindtap="changeIndicatorDots"> indicatorDots </button>
+<button bindtap="changeAutoplay"> autoplay </button>
+<slider bindchange="intervalChange" show-value min="500" max="2000" />interval (自动滑动间隔)
+<slider bindchange="durationChange" show-value min="1000" max="10000"/>duration（动画滑动时间）

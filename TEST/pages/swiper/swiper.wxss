@@ -1,0 +1,10 @@
+/* pages/swiper/swiper.wxss */
+.colorbox{
+  width:100px;
+  height:100px;
+  border-radius:5px;
+  border:2px solid #eee;
+  text-align:center;
+  line-height:100px;
+  margin : 0 auto;
+}

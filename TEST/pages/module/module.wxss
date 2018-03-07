@@ -10,17 +10,17 @@
 .hoverred{
   opacity:0.5;
 }
-.section{
-  overflow:hidden;
+.scrollView{
+  white-space: nowrap;
 }
 .scroll-view-item{
   height:100px;
   width:100%;
 }
 .scroll-view-item_H{
-  height:100px;
   width:100%;
-  float:left;
+  height:100px;
+  display:inline-block; 
 }
 .bc_green{
   background:green;
@@ -33,4 +33,9 @@
 }
 .bc_blue{
   background:blue;
+}
+.footer{
+  background:#eee;
+  height:100px;
+  text-align:center;
 }

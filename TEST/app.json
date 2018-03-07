@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/swiper/swiper",
     "pages/module/module",
     "pages/temp/temp",
     "pages/index/index",
