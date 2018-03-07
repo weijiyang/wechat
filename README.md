@@ -14,6 +14,11 @@ hover-class:鼠标移至样式  hover-start-time 鼠标移至开始改变样式�
 
 ### swiper 组件
 * eg : <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-* indicator-dots:是否有滚动点 autoplay: 是否自动滚动 interval:滚动间隔 duration:滚动动画时间
+* indicator-dots:是否有滚动点 autoplay: 是否自动滚动 interval:滚动间隔 duration:滚动动画时间 
 
+### slider 组件
+* <slider bindtap="intervalChange" show-value min="500" max="2000" />interval (自动滑动间隔)
+* <slider bindtap="durationChange" show-value min="1000" max="10000"/>duration（动画滑动时间）
+*  intervalChange : function(e){interval : e.detail.value }   js通过 e.detail.value 来获取slide的值  show-value 显示数值大小
+*  slide 组件绑定事件不用bindtap  而用bindchange
 
