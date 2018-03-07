@@ -8,3 +8,5 @@
 hover-class:鼠标移至样式  hover-start-time 鼠标移至开始改变样式时间 hober-stay-time 鼠标移至切换样式保留延迟消失时间
 
 * <scroll-view scroll-y style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> </scroll-view>   bindscrolltoupper ：滚动到顶部触发upper  bindscrolltolower：滚动到底部触发lower scroll-into-view ： 定位到视图id scroll-top 竖直滚动条位置
+* 上面的例子如果是横向滚动  scroll-x  wxss需要注意   ： 
+.scrollView{white-space: nowrap; }.scroll-view-item_H{width:100%; height:100px; display:inline-block; }
