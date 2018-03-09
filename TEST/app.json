@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/basic/basic",
+    "pages/index/index",
     "pages/swiper/swiper",
     "pages/module/module",
     "pages/temp/temp",
-    "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {
@@ -12,7 +13,7 @@
     "navigationBarTitleText": "滚蛋吧 肿瘤君！",
     "navigationBarTextStyle": "black",
     "navigationStyle": "default",
-    "enablePullDownRefresh": "true"
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "list": [
@@ -27,6 +28,10 @@
       {
         "pagePath": "pages/temp/temp",
         "text": "练习"
+      },
+      {
+         "pagePath" : "pages/basic/basic",
+          "text":"basic" 
       }
     ],
     "selectedColor": "red"

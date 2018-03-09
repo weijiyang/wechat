@@ -1,0 +1,41 @@
+<!--pages/basic/basic.wxml-->
+<text>progress</text>
+<progress percent="20" show-info /> 
+<progress percent="40" stroke-width="12" /> 
+<progress percent="60" color="pink" /> 
+<progress percent="80" active /> 
+
+<text>rich text</text>
+<rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+<text>text</text>
+<view class="btn-area">
+  <view class="body-view">
+    <text>{{text}}</text>
+    <button bindtap="add"> add line </button>
+    <button bindtap="remove"> remove line</button>
+  </view>
+</view>
+
+
+
+
+
+<text>icon</text>
+<view class="group">
+  <block wx:for="{{iconSize}}">
+    <icon type="success" size="{{item}}" />
+  </block>
+</view>
+
+
+<view class="group">
+  <block wx:for="{{iconType}}">
+    <icon type="{{item}}" size="40" />
+  </block>
+</view>
+
+<view class="group">
+  <block wx:for="{{iconColor}}">
+    <icon type="success" size="40" color="{{item}}" />
+  </block>
+</view>

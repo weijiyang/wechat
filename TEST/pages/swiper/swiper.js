@@ -5,10 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    videoplaying:true,
+    x:0,
+    y:0,
     imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      '../images/img1.jpg',
+      '../images/img1.jpg',
+      '../images/img1.jpg'
     ],
     indicatorDots: false,
     autoplay: false,
@@ -18,6 +21,13 @@ Page({
     red : 255,
     yellow : 255,
     blue : 255
+  },
+
+  tap:function(e){
+    this.setData({
+      x : this.data.x + 30,
+      y : this.data.y + 30
+    })
   },
   changecolorred : function(e){
     this.setData({
@@ -71,7 +81,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.videoCtx = wx.createVideoContext('myVideo')
+  },
+  play : function(){
+    this.videoCtx.play()
+    this.setData({
+      videoplaying:false
+    })
+  },
+  pause : function(){
+    this.videoCtx.pause()
+    this.setData({
+      videoplaying: true
+    })
   },
 
   /**
