@@ -22,3 +22,5 @@ hover-class:鼠标移至样式  hover-start-time 鼠标移至开始改变样式�
 *  intervalChange : function(e){interval : e.detail.value }   js通过 e.detail.value 来获取slide的值  show-value 显示数值大小
 *  slide 组件绑定事件不用bindtap  而用bindchange
 
+### movable-area / movable-view 练习
+* movable-area 为边界 内部包括可移动的movable-view 部分
