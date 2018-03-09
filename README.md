@@ -42,4 +42,7 @@ tip: 暂不支持css动画。
 * <icon type="类型"  color="颜色"  size="图标大小" /> 
 * type : 'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
 ## text
-* 
+* decode可以解析的有&nbsp;&lt; &gt;&amp;&apos;&ensp;&emsp;
+各个操作系统的空格标准并不一致。
+<text/> 组件内只支持<text/>嵌套。
+除了文本节点以外的其他节点都无法长按选中。
