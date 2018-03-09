@@ -24,3 +24,7 @@ hover-class:鼠标移至样式  hover-start-time 鼠标移至开始改变样式�
 
 ### movable-area / movable-view 练习
 * movable-area 为边界 内部包括可移动的movable-view 部分
+* moveable-view 属性： 1.direction:vertical(纵向) horizontal(横向)all   2.inertia 是否具有惯性 3.out-of-bounds : true/false 超出移动区域是否可以移动 3. x y 定义moable-view 横纵坐标 4. damping : 阻尼系数，控制xy改变动画和会弹动画  值越大 越快  5. friction 摩擦系数 需要大于0
+* 注意：movable-view 必须设置width和height属性，不设置默认为10px
+movable-view 默认为绝对定位，top和left属性为0px
+当movable-view小于movable-area时，movable-view的移动范围是在movable-area内；当movable-view大于movable-area时，movable-view的移动范围必须包含movable-area（x轴方向和y轴方向分开考虑）
