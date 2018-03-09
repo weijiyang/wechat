@@ -28,3 +28,12 @@ hover-class:鼠标移至样式  hover-start-time 鼠标移至开始改变样式�
 * 注意：movable-view 必须设置width和height属性，不设置默认为10px
 movable-view 默认为绝对定位，top和left属性为0px
 当movable-view小于movable-area时，movable-view的移动范围是在movable-area内；当movable-view大于movable-area时，movable-view的移动范围必须包含movable-area（x轴方向和y轴方向分开考虑）
+
+## <cover-view></cover-view> 自定义覆盖
+* 用法： <video src="" > <cover-view></cover-view></video>
+* tip: 只可嵌套在原生组件map、video、canvas内，避免嵌套在其他组件内。
+tip: 事件模型遵循冒泡模型，但不会冒泡到原生组件。
+tip: 文本建议都套上cover-view标签，避免排版错误。
+tip: 只支持基本的定位、布局、文本样式。不支持设置单边的border、opacity、background-image等。
+tip: 建议子节点不要溢出父节点
+tip: 暂不支持css动画。
