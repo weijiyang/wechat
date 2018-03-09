@@ -37,3 +37,9 @@ tip: 文本建议都套上cover-view标签，避免排版错误。
 tip: 只支持基本的定位、布局、文本样式。不支持设置单边的border、opacity、background-image等。
 tip: 建议子节点不要溢出父节点
 tip: 暂不支持css动画。
+
+## icon
+* <icon type="类型"  color="颜色"  size="图标大小" /> 
+* type : 'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
+## text
+* 
