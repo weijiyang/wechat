@@ -1,0 +1,5 @@
+
+<view wx:for="data">
+  <view></view>
+</view>
+<button bindtap="add"> 添加一条数据 </button>

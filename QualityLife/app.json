@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/startScence/startscence",
+    "pages/index/index",
+    "pages/logs/logs"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "呆呆の日常",
+    "navigationBarTextStyle": "black"
+  }
+}
