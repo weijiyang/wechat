@@ -1,5 +1,5 @@
 
 <view wx:for="data">
-  <view></view>
+  <view>后台数据练习</view>
 </view>
-<button bindtap="add"> 添加一条数据 </button>
+<button bindtap="add">点击这里添加一条数据 </button>
