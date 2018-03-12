@@ -16,7 +16,7 @@ Page({
         "toolLogo":"../../images/icon/message.jpg",
         "toolLogoActive": "../../images/icon/message_selected.jpg",
         "url":'../notes/notes',
-        "active":true
+        "active":false
       },
       {
         "toolid": '1',
@@ -24,7 +24,7 @@ Page({
         "toolLogo": "../../images/icon/food.jpg",
         "toolLogoActive": "../../images/icon/food_selected.jpg",
         "url": '../food/food',
-        "active": true
+        "active": false
       },
       {
         "toolid": '2',
@@ -32,7 +32,7 @@ Page({
         "toolLogo": "../../images/icon/computer.jpg",
         "toolLogoActive": "../../images/icon/computer_selected.jpg",
         "url": '../food/food',
-        "active": true
+        "active": false
       },
       {
         "toolid": '3',
@@ -40,7 +40,7 @@ Page({
         "toolLogo": "../../images/icon/loveNode.jpg",
         "toolLogoActive": "../../images/icon/loveNode_selected.jpg",
         "url": '../loveNode/loveNode',
-        "active": true
+        "active": false
       },
       {
         "toolid": '4',
@@ -48,11 +48,11 @@ Page({
         "toolLogo": "../../images/icon/shop.jpg",
         "toolLogoActive": "../../images/icon/shop_selected.jpg",
         "url": '../shop/shop',
-        "active": true
+        "active": false
       }
     ]
   },
-  changeActive:function(e){
+  changeActiveStart:function(e){
     var id = e.currentTarget.dataset.toolid;
     var array = this.data.tools;
     for(var i = 0 ;i < array.length ; i++){
@@ -66,6 +66,22 @@ Page({
     this.setData({
       tools : array
     })
+    console.log("changeActiveStart");
+  
+      wx.navigateTo({
+        url: '../notes/notes'
+      })
+  },
+  changeActiveEnd : function(e){
+    var id = e.currentTarget.dataset.toolid;
+    var array = this.data.tools;
+    for(var i = 0; i<array.length ; i++){
+      array[i].active = false;
+    }
+    this.setData({
+      tools : array
+    })
+    console.log("changeActiveEnd");
   },
   add : function(){
 
