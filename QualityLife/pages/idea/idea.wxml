@@ -1,0 +1,114 @@
+<view class="idea_container">
+  <view class="idea_title">评论区</view>
+  <view class="idea_content">
+    <view class="idea_content_me">
+      <image  src="../../images/idea/me.jpg" />
+      <view class="idea_me_bg">
+          <text class="tip_me_head"></text>
+          <text class="tip_content">大家好啊~</text>
+          <text class="tip_me_foot"></text>
+      </view>
+    </view>
+
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+    <view class="idea_content_other">
+       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+      <view class="idea_other_bg">
+          <text class="tip_other_foot"></text>
+          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_other_head"></text>
+      </view>
+    </view>
+
+
+
+
+    <view class="idea_foot">
+    <text>评论：</text>
+    </view>
+
+
+  </view>
+  
+  
+</view>

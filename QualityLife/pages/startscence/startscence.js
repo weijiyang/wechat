@@ -11,9 +11,9 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     // 页面设置
-    "weather":"晴",
+    "weather":"",
     "weather_path":"../../images/weather/cloudy.jpg",
-    "temperature":"12°C",
+    "temperature":"",
     //工具栏信息
     "tools":[
       {
@@ -34,7 +34,7 @@ Page({
       },
       {
         "toolid": '2',
-        "toolName": "DEMO",
+        "toolName": "GAME",
         "toolLogo": "../../images/icon/computer.jpg",
         "toolLogoActive": "../../images/icon/computer_selected.jpg",
         "url": '../food/food',
@@ -55,6 +55,14 @@ Page({
         "toolLogoActive": "../../images/icon/shop_selected.jpg",
         "url": '../shop/shop',
         "active": false
+      },
+      {
+        "toolid": '5',
+        "toolName": "PICTURE",
+        "toolLogo": "../../images/icon/picture.jpg",
+        "toolLogoActive": "../../images/icon/picture_selected.jpg",
+        "url": '../picture/picture',
+        "active": false
       }
     ]
   },
@@ -72,7 +80,6 @@ Page({
     this.setData({
       tools : array
     })
-  console.log(this.data.userInfo)
     // wx.navigateTo({
     //   url: e.currentTarget.dataset.toolurl
     // })
@@ -93,24 +100,24 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    //登陆获取信息
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      }) 
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+    // //登陆获取信息
+    // if (app.globalData.userInfo) {
+    //   this.setData({
+    //     userInfo: app.globalData.userInfo,
+    //     hasUserInfo: true
+    //   }) 
+    // } else {
+    //   // 在没有 open-type=getUserInfo 版本的兼容处理
+    //   wx.getUserInfo({
+    //     success: res => {
+    //       app.globalData.userInfo = res.userInfo
+    //       this.setData({
+    //         userInfo: res.userInfo,
+    //         hasUserInfo: true
+    //       })
+    //     }
+    //   })
+    // }
     //获取用户位置信息
     wx.getLocation({
       success:function(res){
@@ -134,12 +141,11 @@ Page({
       url : url,
       data : param,
       success:function(res){
-        console.log(res)
+
         var city = res.data.result.addressComponent.city;
         var district = res.data.result.addressComponent.district;
         var street = res.data.result.addressComponent.street;  
         city = city.substring(0,city.length-1)
-        console.log(city)
         that.getWeather(city)
       }
     })
@@ -158,8 +164,6 @@ Page({
         'content-type': 'application/json'
       },  
       success:function(res){
-        console.log(res.data.HeWeather5[0].daily_forecast[0].cond.txt_d)
-        console.log(res)
         that.setData({
           "weather": res.data.HeWeather5[0].daily_forecast[0].cond.txt_d,
           "temperature":res.data.HeWeather5[0].daily_forecast[0].tmp.max + "°C"

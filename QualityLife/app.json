@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/idea/idea",
     "pages/startscence/startscence",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/notes/notes"
+    "pages/notes/notes",
+    "pages/food/food"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,6 +25,12 @@
         "text": "TOOLS",
         "iconPath": "images/icon/tools.jpg",
         "selectedIconPath": "images/icon/tools_selected.jpg"
+      },
+      {
+        "pagePath": "pages/idea/idea",
+        "text": "ME",
+        "iconPath": "images/icon/idea.jpg",
+        "selectedIconPath": "images/icon/idea_selected.jpg"
       },
       {
         "pagePath": "pages/index/index",
