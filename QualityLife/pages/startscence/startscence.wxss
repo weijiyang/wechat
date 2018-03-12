@@ -1,1 +1,10 @@
 /* pages/startScence/startscence.wxss */
+
+.weather{
+  /* display:flex; */
+  width:80%;
+  height:180rpx;
+  border:8rpx solid #000000;
+  border-radius:30rpx;
+ 
+}

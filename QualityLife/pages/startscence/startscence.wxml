@@ -1,6 +1,4 @@
-<view class="container">
-<view wx:for="data">
- 
-</view>
 
-</view>
+  <view class="weather"> 
+  </view>
+
