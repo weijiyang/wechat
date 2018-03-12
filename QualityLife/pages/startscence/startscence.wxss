@@ -1,10 +1,67 @@
 /* pages/startScence/startscence.wxss */
-
+.startscence_container{
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+  background:#fece24;
+}
 .weather{
-  /* display:flex; */
+  display:flex; 
   width:80%;
   height:180rpx;
   border:8rpx solid #000000;
-  border-radius:30rpx;
- 
+  border-radius:30rpx; 
+  background:#f5bf14;
+}
+.weather_pic{
+  width:40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding:10rpx 20rpx; 
+  color:#fff;
+  font-size:40rpx;
+  font-weight:200;
+}
+.weather_pic image{
+  width:100rpx;
+  height:100rpx;
+}
+.weather_tem{
+  width:60%;
+  padding-right:20rpx;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+}
+.weather_tem text{
+  text-align:right;
+}
+.weather_tem image{
+  width:90%;
+}
+.tools_container{
+  width:100%;
+  padding-top:30px;
+}
+.tools_container .tool{
+  float:left;
+  width:33%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: space-between;
+  color:#fff;
+  font-size:30rpx;
+  padding:10px 0;
+}
+.tool image{
+  width:50px;
+  height:50px;
 }

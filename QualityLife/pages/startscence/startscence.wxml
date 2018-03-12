@@ -1,4 +1,22 @@
-
-  <view class="weather"> 
+<view class="startscence_container clearfix">
+  <view class="weather clearfix"> 
+    <view class="weather_pic">
+      <image src="{{weather_path}}" mode="scaleToFill" />
+      <text>{{weather}}</text>
+    </view>
+    <view class="weather_tem">
+    <text>{{temperature}}</text>
+    <image src="../../images/weather/bg.jpg" mode="aspectFill" />
+    </view>
   </view>
+
+  <view class="tools_container clearfix">
+    <view class="tool" wx:for="{{tools}}" wx:key="toolid" wx:for-item="tool" bindtap="changeActive" >
+      <image wx:if="{{tool.active}}" src="{{tool.toolLogo}}" mode="aspectFill" />
+      <image wx:else src="{{tool.toolLogoActive}}" mode="aspectFill" />
+      <text>{{tool.toolName}}</text>
+    </view>
+  </view>
+</view>
+  
 
