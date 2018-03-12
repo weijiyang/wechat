@@ -28,9 +28,9 @@ Page({
       },
       {
         "toolid": '2',
-        "toolName": "FOOD",
-        "toolLogo": "../../images/icon/tools.jpg",
-        "toolLogoActive": "../../images/icon/tools_selected.jpg",
+        "toolName": "DEMO",
+        "toolLogo": "../../images/icon/computer.jpg",
+        "toolLogoActive": "../../images/icon/computer_selected.jpg",
         "url": '../food/food',
         "active": true
       },
@@ -38,7 +38,7 @@ Page({
         "toolid": '3',
         "toolName": "LOVE",
         "toolLogo": "../../images/icon/loveNode.jpg",
-        "toolLogoActive": "../../images/icon/loveNode.jpg",
+        "toolLogoActive": "../../images/icon/loveNode_selected.jpg",
         "url": '../loveNode/loveNode',
         "active": true
       },
@@ -46,14 +46,26 @@ Page({
         "toolid": '4',
         "toolName": "SHOP",
         "toolLogo": "../../images/icon/shop.jpg",
-        "toolLogoActive": "../../images/icon/shop.jpg",
+        "toolLogoActive": "../../images/icon/shop_selected.jpg",
         "url": '../shop/shop',
         "active": true
       }
     ]
   },
   changeActive:function(e){
-    console.log(e.currentTarget)
+    var id = e.currentTarget.dataset.toolid;
+    var array = this.data.tools;
+    for(var i = 0 ;i < array.length ; i++){
+      if( i == id ){
+        array[i].active = !array[i].active;
+      }
+      else{
+        array[i].active = false;
+      }
+    }
+    this.setData({
+      tools : array
+    })
   },
   add : function(){
 
