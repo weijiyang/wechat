@@ -1,4 +1,5 @@
 var Bmob = require('../../utils/bmob.js');
+var app = getApp();
 // pages/startScence/startscence.js
 Page({
 
@@ -6,9 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //用户登陆
+    userInfo: {},
+    hasUserInfo: false,
+    // 页面设置
     "weather":"cloudy",
     "weather_path":"../../images/weather/cloudy.jpg",
     "temperature":"12°C",
+    //工具栏信息
     "tools":[
       {
         "toolid":'0',
@@ -66,11 +72,10 @@ Page({
     this.setData({
       tools : array
     })
-    console.log("changeActiveStart");
-  
-      wx.navigateTo({
-        url: '../notes/notes'
-      })
+  console.log(this.data.userInfo)
+    // wx.navigateTo({
+    //   url: e.currentTarget.dataset.toolurl
+    // })
   },
   changeActiveEnd : function(e){
     var id = e.currentTarget.dataset.toolid;
@@ -83,44 +88,36 @@ Page({
     })
     console.log("changeActiveEnd");
   },
-  add : function(){
-
-
-
-    // var Diary = Bmob.Object.extend("diary");
-    // var diary = new Diary();
-    // diary.set("title", "hello");
-    // diary.set("content", "hello world");
-    // //添加数据，第一个入口参数是null
-    // diary.save(null, {
-    //   success: function (result) {
-    //     // 添加成功，返回成功之后的objectId（注意：返回的属性名字是id，不是objectId），你还可以在Bmob的Web管理后台看到对应的数据
-    //     console.log("日记创建成功, objectId:" + JSON.stringify(result));
-    //   },
-    //   error: function (result, error) {
-    //     // 添加失败
-    //     console.log('创建日记失败');
-
-    //   }
-    // });
-
-    // var Diary = Bmob.Object.extend("diary");
-    // var query = new Bmob.Query(Diary);
-    // query.get("	5Tm9WWW2", {
-    //   success: function (result) {
-    //     // The object was retrieved successfully.
-    //     console.log("该日记标题为" + result.get("title"));
-    //   },
-    //   error: function (result, error) {
-    //     console.log("查询失败" + JSON.stringify(error));
-    //   }
-    // });
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
   },
 
   /**
