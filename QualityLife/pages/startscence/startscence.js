@@ -11,7 +11,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     // 页面设置
-    "weather":"cloudy",
+    "weather":"晴",
     "weather_path":"../../images/weather/cloudy.jpg",
     "temperature":"12°C",
     //工具栏信息
@@ -92,20 +92,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
+    //登陆获取信息
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
+      }) 
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
@@ -118,6 +111,61 @@ Page({
         }
       })
     }
+    //获取用户位置信息
+    wx.getLocation({
+      success:function(res){
+        var lan = res.latitude;
+        var lon = res.longitude;
+        console.log("经纬度：" + lan + ", " + lon);
+        _this.getCity(lan,lon) 
+      }
+    })
+  },
+  //通过经纬度获取城市信息
+  getCity : function(lan ,lon){
+    var that = this;
+    var url = "https://api.map.baidu.com/geocoder/v2/";  
+    var param = {
+      location : lan + ',' + lon,
+      output : "json",//返回的数据格式
+      ak: "MKABLw7PZssnQPy0BmnV2e6vcUyKWZxf"//地图api的ak
+    }
+    wx.request({
+      url : url,
+      data : param,
+      success:function(res){
+        console.log(res)
+        var city = res.data.result.addressComponent.city;
+        var district = res.data.result.addressComponent.district;
+        var street = res.data.result.addressComponent.street;  
+        city = city.substring(0,city.length-1)
+        console.log(city)
+        that.getWeather(city)
+      }
+    })
+  },
+  getWeather : function(city){
+    var that = this ;
+    var url = "https://free-api.heweather.com/v5/weather";  
+    var param  ={
+      key: "4a555d4d1adc451d8ceeaa73869c9519",
+      city:city
+    };
+    wx.request({
+      url : url,
+      data : param ,
+      header: {
+        'content-type': 'application/json'
+      },  
+      success:function(res){
+        console.log(res.data.HeWeather5[0].daily_forecast[0].cond.txt_d)
+        console.log(res)
+        that.setData({
+          "weather": res.data.HeWeather5[0].daily_forecast[0].cond.txt_d,
+          "temperature":res.data.HeWeather5[0].daily_forecast[0].tmp.max + "°C"
+        })
+      }
+    })
   },
 
   /**
