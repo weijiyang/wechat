@@ -9,6 +9,28 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "呆呆の日常",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor":"#fece24",
+    "backgroundColor":"#fece24"
+  },
+  "tabBar":{
+    "color":"#fff",
+    "selectedColor":"#fff",
+    "backgroundColor":"#fece24",
+    "borderStyle":"black",
+    "list":[
+      {
+        "pagePath":"pages/startscence/startscence",
+        "text":"TOOLS",
+        "iconPath":"images/icon/tools.jpg",
+        "selectedIconPath":"images/icon/tools_selected.jpg"
+    } ,
+    {
+      "pagePath": "pages/index/index",
+      "text": "ME",
+      "iconPath": "images/icon/people.jpg",
+      "selectedIconPath": "images/icon/people_selected.jpg"
+    }
+    ]
   }
 }
