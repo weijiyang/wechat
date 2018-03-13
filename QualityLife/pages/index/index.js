@@ -50,5 +50,6 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    console.log(this.data.userInfo)
   }
 })

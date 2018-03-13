@@ -1,15 +1,7 @@
 var Bmob = require('../../utils/bmob.js');
 var app = getApp();
-// pages/startScence/startscence.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    //用户登陆
-    userInfo: {},
-    hasUserInfo: false,
     // 页面设置
     "weather":"",
     "weather_path":"../../images/weather/cloudy.jpg",
@@ -95,29 +87,8 @@ Page({
     })
     console.log("changeActiveEnd");
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     var _this = this;
-    // //登陆获取信息
-    // if (app.globalData.userInfo) {
-    //   this.setData({
-    //     userInfo: app.globalData.userInfo,
-    //     hasUserInfo: true
-    //   }) 
-    // } else {
-    //   // 在没有 open-type=getUserInfo 版本的兼容处理
-    //   wx.getUserInfo({
-    //     success: res => {
-    //       app.globalData.userInfo = res.userInfo
-    //       this.setData({
-    //         userInfo: res.userInfo,
-    //         hasUserInfo: true
-    //       })
-    //     }
-    //   })
-    // }
     //获取用户位置信息
     wx.getLocation({
       success:function(res){
@@ -141,7 +112,6 @@ Page({
       url : url,
       data : param,
       success:function(res){
-
         var city = res.data.result.addressComponent.city;
         var district = res.data.result.addressComponent.district;
         var street = res.data.result.addressComponent.street;  
@@ -168,6 +138,7 @@ Page({
           "weather": res.data.HeWeather5[0].daily_forecast[0].cond.txt_d,
           "temperature":res.data.HeWeather5[0].daily_forecast[0].tmp.max + "°C"
         })
+        console.log("city:"+city + " weather:" + that.data.weather + " temperature:" + that.data.temperature)
       }
     })
   },

@@ -1,4 +1,6 @@
-/* pages/startScence/startscence.wxss */
+page{
+  background:#fece24;
+}
 .startscence_container{
   width:100%;
   height: 100%;

@@ -1,34 +1,63 @@
+var Bmob = require('../../utils/bmob.js');
 const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     userInfo: {},
-    hasUserInfo: false
+    hasUserInfo: false,
+    ideaList:[
+      {
+        "id":"0",
+        "content":"在吗？小胖子？"
+      },
+      {
+        "id" : "1",
+        "content":"可以提点建议么？"
+      }
+    ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  addIdea : function(e){
+    var _this = this;
+    var arr = _this.data.ideaList
+    if(!_this.data.userInfo){
+      arr.push({ "id":null, "content": "哎呀我还没有登陆呐~" })
+      _this.setData({
+        ideaList: arr
+      })
+    }
+    var Idea = Bmob.Object.extend("idea")
+    var idea = new Idea()
+    idea.set("nickName",this.data.userInfo.nickName)
+    idea.set("avatarUrl",this.data.userInfo.avatarUrl)
+    idea.set("province",this.data.userInfo.province)
+    idea.set("country",this.data.userInfo.country)
+    idea.set("city",this.data.userInfo.city)
+    idea.set("content",e.detail.value)
+    idea.save(null,{
+      success : function(res){
+        arr = _this.data.ideaList
+        arr.push({ "id": res.id ,"content": e.detail.value })
+        _this.setData({
+          ideaList : arr
+        })
+       
+      },
+      error : function(res,err){
+        arr = _this.data.ideaList
+        arr.push({ "id": null, "content": err + "网络错误~请重试" })
+        _this.setData({
+          ideaList: arr
+        })
+      }
+    })
+  },
   onLoad: function (options) {
+    //获取用户信息
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
     } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
@@ -40,6 +69,27 @@ Page({
       })
     }
   },
+  getUserIdea : function(){
+    var _this = this ;
+    var Diary = Bmob.Object.extend("idea");
+    var idea = new Bmob.Query(Diary);
+    var userMsg = idea.equalTo("nickName",this.data.userInfo.nickName)
+    userMsg.find({
+      success: function (result) {
+        var arr =[];
+        for(var i =0 ;i <result.length ; i++){
+          console.log(result[i])
+          arr.push({"id":result[i].id,"content":result[i].attributes.content})
+        }
+        _this.setData({
+          ideaList : arr
+        })
+      },
+      error: function (result, error) {
+        console.log("初始化用户信息查询失败");
+      }
+    });
+  },
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -48,19 +98,14 @@ Page({
       hasUserInfo: true
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
+    //用户登陆&调取数据库
   
+    if (this.data.hasUserInfo) {
+        this.getUserIdea();
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
   },
 
   /**
@@ -90,11 +135,7 @@ Page({
   onReachBottom: function () {
   
   },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
-  
+
   }
 })

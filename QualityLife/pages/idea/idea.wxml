@@ -5,106 +5,25 @@
       <image  src="../../images/idea/me.jpg" />
       <view class="idea_me_bg">
           <text class="tip_me_head"></text>
-          <text class="tip_content">大家好啊~</text>
-          <text class="tip_me_foot"></text>
+          <text class="tip_content">大家好啊~啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</text>
       </view>
     </view>
 
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
+    <view class="idea_content_other" wx:for="{{ideaList}}" wx:key="id" wx:for-item="idea">
+       <image  wx:if="{{!hasUserInfo}}" src="../../images/icon/people.jpg" background-size="cover"/>        <image  wx:else src="{{userInfo.avatarUrl}}" background-size="cover" /> 
       <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
+          <text class="tip_content">{{idea.content}}</text>
           <text class="tip_other_head"></text>
       </view>
     </view>
-
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-    <view class="idea_content_other">
-       <image  src="{{userInfo.avatarUrl}}" background-size="cover" /> 
-      <view class="idea_other_bg">
-          <text class="tip_other_foot"></text>
-          <text class="tip_content">可以提建议嘛？</text>
-          <text class="tip_other_head"></text>
-      </view>
-    </view>
-
 
 
 
     <view class="idea_foot">
     <text>评论：</text>
+    <view class="section">
+      <input type="text" placeholder="请输入想发表的内容..." bindconfirm="addIdea"  />
+    </view>
     </view>
 
 

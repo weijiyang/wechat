@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/idea/idea",
     "pages/startscence/startscence",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/notes/notes",
     "pages/food/food"
@@ -28,7 +28,7 @@
       },
       {
         "pagePath": "pages/idea/idea",
-        "text": "ME",
+        "text": "IDEA",
         "iconPath": "images/icon/idea.jpg",
         "selectedIconPath": "images/icon/idea_selected.jpg"
       },
