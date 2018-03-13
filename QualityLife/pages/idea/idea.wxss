@@ -2,7 +2,7 @@ page{
   background:#fece24;
 }
 .idea_container{
-  padding-top:30px;
+  padding:50px 0;
   background:#fece24;
 }
 .idea_foot{

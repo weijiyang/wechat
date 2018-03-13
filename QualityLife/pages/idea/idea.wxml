@@ -19,11 +19,11 @@
 
 
 
-    <view class="idea_foot">
-    <text>评论：</text>
-    <view class="section">
-      <input type="text" placeholder="请输入想发表的内容..." bindconfirm="addIdea"  />
-    </view>
+    <view class="idea_foot" fixed="true">
+      <text>评论：</text>
+      <view class="section">
+        <input type="text" placeholder="请输入想发表的内容..." bindconfirm="addIdea" auto-focus/>
+      </view>
     </view>
 
 

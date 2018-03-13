@@ -23,31 +23,41 @@ Page({
       _this.setData({
         ideaList: arr
       })
+    }else{
+      var Idea = Bmob.Object.extend("idea")
+      var idea = new Idea()
+      idea.set("nickName", this.data.userInfo.nickName)
+      idea.set("avatarUrl", this.data.userInfo.avatarUrl)
+      idea.set("province", this.data.userInfo.province)
+      idea.set("country", this.data.userInfo.country)
+      idea.set("city", this.data.userInfo.city)
+      idea.set("content", e.detail.value)
+      idea.save(null, {
+        success: function (res) {
+          arr = _this.data.ideaList
+          arr.push({ "id": res.id, "content": e.detail.value })
+          _this.setData({
+            ideaList: arr
+          })
+
+        },
+        error: function (res, err) {
+          arr = _this.data.ideaList
+          arr.push({ "id": null, "content": err + "发生错误~请重试" })
+          _this.setData({
+            ideaList: arr
+          })
+        }
+      })
     }
-    var Idea = Bmob.Object.extend("idea")
-    var idea = new Idea()
-    idea.set("nickName",this.data.userInfo.nickName)
-    idea.set("avatarUrl",this.data.userInfo.avatarUrl)
-    idea.set("province",this.data.userInfo.province)
-    idea.set("country",this.data.userInfo.country)
-    idea.set("city",this.data.userInfo.city)
-    idea.set("content",e.detail.value)
-    idea.save(null,{
-      success : function(res){
-        arr = _this.data.ideaList
-        arr.push({ "id": res.id ,"content": e.detail.value })
-        _this.setData({
-          ideaList : arr
-        })
-       
-      },
-      error : function(res,err){
-        arr = _this.data.ideaList
-        arr.push({ "id": null, "content": err + "网络错误~请重试" })
-        _this.setData({
-          ideaList: arr
-        })
-      }
+    var query = wx.createSelectorQuery();
+    query.select("#idea_container")
+    query.exec(function(res){
+      console.log(res)
+    })
+    wx.pageScrollTo({
+      scrollTop: this.data.ideaContentHeight,
+      duration: 300
     })
   },
   onLoad: function (options) {
@@ -78,7 +88,6 @@ Page({
       success: function (result) {
         var arr =[];
         for(var i =0 ;i <result.length ; i++){
-          console.log(result[i])
           arr.push({"id":result[i].id,"content":result[i].attributes.content})
         }
         _this.setData({
