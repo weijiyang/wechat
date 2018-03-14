@@ -50,13 +50,8 @@ Page({
         }
       })
     }
-    var query = wx.createSelectorQuery();
-    query.select("#idea_container")
-    query.exec(function(res){
-      console.log(res)
-    })
     wx.pageScrollTo({
-      scrollTop: this.data.ideaContentHeight,
+      scrollTop: 10000,
       duration: 300
     })
   },
