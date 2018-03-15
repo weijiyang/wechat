@@ -50,10 +50,7 @@ Page({
         }
       })
     }
-    wx.pageScrollTo({
-      scrollTop: 10000,
-      duration: 300
-    })
+   
   },
   onLoad: function (options) {
     //获取用户信息
