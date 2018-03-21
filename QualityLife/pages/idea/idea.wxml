@@ -1,6 +1,6 @@
 <view class="idea_container">
   <view class="idea_title">评论区</view>
-  <view class="idea_content">
+  <scroll-view scroll-y="true" scroll-top="200" class="idea_content">
     <view class="idea_content_me">
       <image  src="../../images/idea/me.jpg" />
       <view class="idea_me_bg">
@@ -27,7 +27,7 @@
     </view>
 
 
-  </view>
+  </scroll-view>
   
   
 </view>

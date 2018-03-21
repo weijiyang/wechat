@@ -1,5 +1,5 @@
 <view class="startscence_container clearfix">
-  <view class="weather clearfix"> 
+  <view class="weather clearfix" wx:if="{{weather}}" > 
     <view class="weather_pic">
       <image src="{{weather_path}}" mode="scaleToFill" />
       <text>{{weather}}</text>

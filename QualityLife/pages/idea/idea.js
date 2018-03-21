@@ -2,6 +2,7 @@ var Bmob = require('../../utils/bmob.js');
 const app = getApp()
 Page({
   data: {
+    scrollTop:50,
     userInfo: {},
     hasUserInfo: false,
     ideaList:[
@@ -37,7 +38,8 @@ Page({
           arr = _this.data.ideaList
           arr.push({ "id": res.id, "content": e.detail.value })
           _this.setData({
-            ideaList: arr
+            ideaList: arr,
+            scrollTop : _this.data.scrollTop + 100
           })
 
         },
@@ -45,7 +47,8 @@ Page({
           arr = _this.data.ideaList
           arr.push({ "id": null, "content": err + "发生错误~请重试" })
           _this.setData({
-            ideaList: arr
+            ideaList: arr,
+            scrollTop :_this.data.scrollTop + 50
           })
         }
       })

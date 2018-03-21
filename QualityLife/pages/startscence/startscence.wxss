@@ -44,6 +44,7 @@ page{
 }
 .weather_tem text{
   text-align:right;
+  height:20px;
 }
 .weather_tem image{
   width:90%;

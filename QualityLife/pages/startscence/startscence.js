@@ -3,7 +3,7 @@ var app = getApp();
 Page({
   data: {
     // 页面设置
-    "weather":"",
+    "weather":null,
     "weather_path":"../../images/weather/cloudy.jpg",
     "temperature":"",
     //工具栏信息

@@ -2,7 +2,6 @@ page{
   background:#fece24;
 }
 .idea_container{
-  padding:50px 0;
   background:#fece24;
 }
 .idea_foot{
@@ -37,6 +36,7 @@ page{
   font-weight:400;
 }
 .idea_title{
+  z-index:10;
   width:100%;
   position:fixed;
   top:0;
@@ -52,6 +52,7 @@ page{
   display:flex;
   flex-direction: column;
   align-items: center;
+  margin-top:50px;
 }
 .idea_content image{
   width:50px;
